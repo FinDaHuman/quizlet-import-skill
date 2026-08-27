@@ -1,0 +1,15 @@
+This file is the SEMANTIC ground truth for the report, not a string-match target.
+The counts must match (10 found, 10 emitted, 1 skipped, 1 split, 9 junk lines) and
+the arithmetic must reconcile. Wording will vary between agents, and flagging extra
+items - for example Câu 4's parenthesis, which opens on the stem and closes seven
+lines later - is better than flagging none.
+
+Source: 10 question blocks found
+Emitted: 10 cards  (10 base - 1 skipped + 1 split from alternate-form parenthetical)
+Skipped: 1 - no correct answer found in source (source item "Câu 10", the CPU clock-speed unit)
+Junk removed: 9 lines - tutoring-centre header with phone x2 (lines 1, 28), page footer x3 (lines 3, 27, 52), document title x1 (line 2), horizontal rule x1 (line 26), closing encouragement and Zalo ad x2 (lines 81, 82)
+Answer key consumed: the "ĐÁP ÁN CÁC CÂU 7 - 9" block supplied the answers for source items 7, 8 and 9, which carry no inline marker
+Flagged: 0
+
+Output: examples/expected-output.txt
+Import into Quizlet with "Between term and definition" = $$$ and "Between cards" = ###

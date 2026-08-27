@@ -1,0 +1,38 @@
+Đơn vị nhỏ nhất của thông tin trong máy tính là gì?
+A. Bit
+B. Byte
+C. Kilobyte
+D. Megabyte$$$A. Bit###HTTP là viết tắt của cụm từ nào?
+A. HyperText Transfer Protocol
+B. HighText Transfer Protocol
+C. HyperText Transmission Protocol
+D. Hyper Transfer Text Protocol$$$A. HyperText Transfer Protocol (Gợi ý: giao thức tầng ứng dụng)###Điều 15 của Luật An toàn thông tin mạng quy định về nội dung nào?
+A. Bảo vệ thông tin cá nhân
+B. Bảo vệ hệ thống thông tin
+C. Bảo vệ bí mật nhà nước
+D. Bảo vệ quyền sở hữu trí tuệ$$$A. Bảo vệ thông tin cá nhân###Giao thức nào sau đây dùng để truyền tệp tin?
+A. FTP
+B. HTTP
+C. SMTP
+D. DNS$$$A. FTP###Giao thức nào sau đây KHÔNG dùng để truyền tệp tin?
+A. FTP
+B. SFTP
+C. SMTP
+D. TFTP$$$C. SMTP###RAM là bộ nhớ khả biến, dữ liệu bị mất khi ngắt nguồn điện.$$$Đúng###Những thành phần nào sau đây thuộc phần cứng máy tính?
+A. CPU
+B. Hệ điều hành
+C. RAM
+D. Trình biên dịch$$$A. CPU
+C. RAM (Chọn 2 đáp án)###Ngôn ngữ nào sau đây là ngôn ngữ lập trình bậc cao?
+A. Assembly
+B. Python
+C. Mã máy
+D. Microcode$$$B. Python (Kiểu hỏi khác: Ngôn ngữ nào sau đây KHÔNG phải là hợp ngữ?)###Thiết bị nào sau đây là thiết bị nhập?
+A. Máy in
+B. Bàn phím
+C. Màn hình
+D. Loa$$$B. Bàn phím###Hệ điều hành nào sau đây là mã nguồn mở?
+A. Windows
+B. macOS
+C. Linux
+D. iOS$$$C. Linux

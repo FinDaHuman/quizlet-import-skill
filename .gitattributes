@@ -1,0 +1,11 @@
+# The example and test fixtures are byte-exact: no BOM, LF only, and no trailing
+# newline. Git's autocrlf would rewrite them on checkout under Windows and hand
+# the next user exactly the corruption this skill exists to prevent.
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+
+# -text marks these as binary so git never normalizes their line endings.
+# tests/bad-crlf-bom.txt is INTENTIONALLY CRLF-with-BOM: it is the fixture that
+# proves check 1 of the validator fires. Do not "fix" it.
+*.txt -text

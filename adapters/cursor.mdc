@@ -1,0 +1,16 @@
+---
+description: Convert quiz or question-bank files into a Quizlet-importable .txt using $$$ and ### separators. Applies whenever the user mentions Quizlet, flashcard import, or converting questions into cards.
+alwaysApply: false
+---
+
+Read `SKILL.md` from the quizlet-import-skill repository in full before doing
+this work, and follow it exactly. @SKILL.md
+
+The single rule most often broken: cards are joined by `###` with **zero**
+characters on either side, so card N's answer and card N+1's question share a
+line. The output looks cramped and malformed — that is correct. Never add a
+newline next to `###` and never end the file with a newline; Quizlet imports
+that whitespace as card content.
+
+Validate the result with `python scripts/validate_quizlet.py <output.txt>`
+before handing it over.
