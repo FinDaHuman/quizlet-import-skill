@@ -104,6 +104,17 @@ straddling a boundary is neither lost nor double-counted.
 Do not trust the source's own numbering as a question count. Numbers repeat, skip,
 restart at 1 mid-file, and go missing. Count the blocks you actually see.
 
+**Human-authored variation warning.** Assume the input was assembled or edited
+by people. The same instruction may appear with different capitalization,
+spacing, punctuation, accents, brackets, wording, line wrapping, or typographic
+formatting; a marker may also be absent from text but present as bold, italic,
+underline, or highlight. Hard-coded searches and regular expressions are useful
+for finding candidates, but they are not authoritative. Always inspect the
+candidate's surrounding question block, option structure, document formatting,
+and answer evidence before classifying, moving, or deleting it. After automated
+normalization, scan the complete output for variants the search pattern may have
+missed.
+
 ### Step 2 — Inventory
 
 Walk the file once and classify every line as one of: question stem, option,
@@ -185,13 +196,28 @@ parentheses, after the answer:
 B. Python (Kiểu hỏi khác: Ngôn ngữ nào sau đây KHÔNG phải hợp ngữ?)
 ```
 
-**Case C — anything else** (hints, notes, "choose 2", references, clarifications).
+**Case C — selection instructions.** Material such as `(Chọn 2 đáp án)`,
+`( Chọn 3 )`, `(2 đáp án)`, `(Lựa chọn các đáp án đúng)`, and
+`(Câu hỏi lựa chọn nhiều đáp án)`
+belongs on the **front**, on its own line immediately after the question stem
+and before the option lines. It tells the learner how to attempt the question
+and must be visible before the answer is revealed. Serialize it as:
+
+```
+Question stem
+(Chọn 2 đáp án)
+A. first option
+B. second option
+```
+
+**Case D — anything else** (hints, notes, references, clarifications).
 Append it to the back in parentheses, exactly like Case B.
 
-The rule that unifies B and C: **parenthetical material never appears on the
-front and never appears inside an option.** The front holds the question and the
-choices and nothing else. Anything that would help the user answer before they
-have tried belongs on the back, where they see it only after flipping the card.
+The rule that unifies the ordinary parenthetical cases: alternative wording,
+hints, references, and clarifications never appear inside an option. Selection
+instructions are the explicit front-side exception because they change how the
+learner should attempt the question. Other material that would help the user
+answer after they have tried belongs on the back.
 
 For a multi-line back (a multi-answer question, section 5), append the
 parenthetical to the **last** answer line.
@@ -234,12 +260,12 @@ in the report with its source position.
 back, in letter order:
 
 ```
-Những thành phần nào sau đây thuộc phần cứng máy tính?
+Những thành phần nào sau đây thuộc phần cứng máy tính? (Chọn 2 đáp án)
 A. CPU
 B. Hệ điều hành
 C. RAM
 D. Trình biên dịch$$$A. CPU
-C. RAM (Chọn 2 đáp án)
+C. RAM
 ```
 
 Note that the last back line is followed immediately by `###`, or by the end of
@@ -292,6 +318,11 @@ the two paths are interchangeable.
     prefix.
 11. No two cards have identical fronts. A duplicate is usually a parsing error —
     check it rather than assuming the source repeated itself.
+12. Selection instructions such as `(Chọn 2 đáp án)`, `( 2 đáp án)`, and
+    `(Lựa chọn 3 đáp án)`
+    appear in the question/term portion on their own line immediately after the
+    stem, not appended to the stem and not in the definition/back. Do not move
+    answer-specific notes such as `(Nếu không có A chọn C)` to the front.
 
 ---
 
