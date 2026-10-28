@@ -19,11 +19,12 @@ A. FTP
 B. SFTP
 C. SMTP
 D. TFTP$$$C. SMTP###RAM là bộ nhớ khả biến, dữ liệu bị mất khi ngắt nguồn điện.$$$Đúng###Những thành phần nào sau đây thuộc phần cứng máy tính?
+(Chọn 2 đáp án)
 A. CPU
 B. Hệ điều hành
 C. RAM
 D. Trình biên dịch$$$A. CPU
-C. RAM (Chọn 2 đáp án)###Ngôn ngữ nào sau đây là ngôn ngữ lập trình bậc cao?
+C. RAM###Ngôn ngữ nào sau đây là ngôn ngữ lập trình bậc cao?
 A. Assembly
 B. Python
 C. Mã máy
