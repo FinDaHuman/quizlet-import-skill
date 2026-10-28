@@ -56,9 +56,10 @@ Other rules the skill enforces:
   (`Điều 15 quy định...`) is kept
 - option prefixes are normalized to `A. B. C. D.` whatever the source used —
   including sources with no prefixes at all
-- parenthetical material never appears on the front: an alternative question
-  form with its own options becomes a separate card, and everything else goes
-  into parentheses on the back
+- parenthetical selection instructions such as `(Chọn 2 đáp án)` appear on
+  their own line after the question stem and before the options; alternative
+  question forms with their own options become separate cards, and other
+  parenthetical material goes into the back
 - questions with no answer anywhere in the source are skipped and reported,
   never answered by guesswork
 - output is UTF-8 without BOM, LF only, no trailing newline
@@ -154,7 +155,7 @@ FAIL  my-cards-quizlet.txt  (12 cards parsed)
   error    check 9  (card 4): back line is not '<letter>. <option text>': 'B'
 ```
 
-No dependencies beyond Python 3.7+. The eleven checks it runs are also written
+No dependencies beyond Python 3.7+. The twelve checks it runs are also written
 out as a prose checklist in `SKILL.md` section 6, in the same order, so an agent
 that cannot execute code gets the same result by hand.
 

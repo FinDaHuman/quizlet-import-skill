@@ -18,6 +18,7 @@ with zero characters of any kind adjacent to the separators.
 """
 
 import codecs
+import glob
 import re
 import sys
 
@@ -44,6 +45,16 @@ UNNORMALIZED_OPTION_RE = re.compile(r"^(?:[a-z][).:]|\d{1,2}[).:])\s+\S")
 # A bullet is a weaker signal - it can legitimately open a continuation line of a
 # multi-line stem - so it is reported as a warning rather than an error.
 BULLET_OPTION_RE = re.compile(r"^[-•*+]\s+\S")
+
+
+SELECTION_NOTE_RE = re.compile(
+    r"\(\s*(?:(?:chọn|lựa chọn|câu hỏi lựa chọn)\b|\d+\s*đáp án\b)[^()]*\)",
+    re.IGNORECASE,
+)
+SELECTION_LINE_RE = re.compile(
+    r"^\s*\(\s*(?:(?:chọn|lựa chọn|câu hỏi lựa chọn)\b|\d+\s*đáp án\b)[^()]*\)\s*$",
+    re.IGNORECASE,
+)
 
 
 class Report:
@@ -160,6 +171,28 @@ def check_card(index, card, rep, seen_fronts):
         return
 
     stem_lines, option_lines = split_front(front)
+
+    # Check 12 - selection instructions belong on their own term-side line,
+    # immediately after the stem, never in the definition.
+    if SELECTION_NOTE_RE.search(back):
+        rep.error(
+            12,
+            "selection instruction belongs in the front on its own line, not in "
+            "the back: %s" % snippet(back),
+            index,
+        )
+    front_selection_lines = [
+        n for n, line in enumerate(stem_lines) if SELECTION_LINE_RE.match(line)
+    ]
+    if SELECTION_NOTE_RE.search(stem_lines[0]) or (
+        front_selection_lines and front_selection_lines != [1]
+    ):
+        rep.error(
+            12,
+            "selection instruction must be its own line immediately after the "
+            "question stem",
+            index,
+        )
 
     # Check 7 - leftover question numbering.
     if NUMBERING_RE.match(stem_lines[0]):
@@ -322,7 +355,12 @@ def main(argv):
         except (AttributeError, ValueError):
             pass
 
-    paths = [a for a in argv[1:] if not a.startswith("-")]
+    paths = []
+    for arg in argv[1:]:
+        if arg.startswith("-"):
+            continue
+        matches = glob.glob(arg)
+        paths.extend(matches or [arg])
     quiet = "--quiet" in argv[1:] or "-q" in argv[1:]
     if not paths:
         print(__doc__.strip())
