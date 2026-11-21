@@ -197,7 +197,7 @@ B. Python (Kiểu hỏi khác: Ngôn ngữ nào sau đây KHÔNG phải hợp ng
 ```
 
 **Case C — selection instructions.** Material such as `(Chọn 2 đáp án)`,
-`( Chọn 3 )`, `(2 đáp án)`, `(Lựa chọn các đáp án đúng)`, and
+`( Chọn 3 )`, `(2 đáp án)`, `(Lựa chọn các đáp án đúng)`, `(Choose 3 answers)` and
 `(Câu hỏi lựa chọn nhiều đáp án)`
 belongs on the **front**, on its own line immediately after the question stem
 and before the option lines. It tells the learner how to attempt the question
